@@ -4,8 +4,28 @@
         <meta charset="utf-8">
         <title>My Product</title>
         <script src="app@bundle.js"></script>
+        <script src="https://use.fontawesome.com/0790c661a1.js"></script>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
     </head>
     <body>
-
+        <div id="app">
+            <div id="w-top-bar">
+                <div id="w-top-bar-left" data-zone="hm-logo">
+                    MAPHOT
+                </div>
+                <div id="w-top-bar-middle" data-zone="hm-search">
+                    <div class="search_box">
+                        <input type="text" name="search"/>
+                    </div>
+                </div>
+                <div id="w-top-bar-right" data-zone="hm-settings">
+                    Dates <li class="fa fa-cog"></li>
+                </div>
+            </div>
+            <div id="w-map-instance">
+            </div>
+            <div id="w-bot-bar">
+            </div>
     </body>
 </html>

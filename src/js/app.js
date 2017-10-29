@@ -1,10 +1,35 @@
 require("!style-loader!css-loader!../css/app.css");
-import Product from './app/Product';
 
-let myProduct = new Product(43, "My Product");
+/* Transitions and such */
+window.$ = require("jquery");
 
-console.dir("Product is named:" + myProduct.productid + " with " + myProduct.productname);
+/* Class Loader */
+import Person from './app/Person';
+import Job from './app/Job';
+import Map from './app/Map';
+import People from './app/People';
 
-myProduct.uppername();
+/* Define a person and a job, for testing */
+let person = new Person(
+	"John Johnson",
+	new Job("Brick Layer", 26000)
+);
 
-console.dir("Product is named: " + myProduct.productname);
+let token = "pk.eyJ1Ijoic2NvdHRiZXJ3aWNrbG9uZG9udG93biIsImEiOiJjMVFnelBzIn0.jDehcQpMLsuwgNQP2Hafgg";
+
+/* Cycle up the event */
+document.addEventListener("DOMContentLoaded",function(){
+
+	let people = new People();
+	people.fetchPeople();
+
+	let map = new Map(token);
+	let mapInstance = map.defineMapInstance(
+		"w-map-instance",
+		"mapbox://styles/scottberwicklondontown/cj95tj1sv1jtw2rliwiggiddw",
+		-0.367165,
+		51.421128,
+		10
+	);
+
+});
