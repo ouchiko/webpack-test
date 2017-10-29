@@ -1,4 +1,4 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -9,10 +9,18 @@ module.exports = {
         filename: "[name]@bundle.js"
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /.css$/,
-                loader: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader']
+                })
+            },
+
+            {
+                test: /.js$/,
+                loader: 'babel-loader?presets[]=es2015'
             }
         ]
     },

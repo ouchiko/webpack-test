@@ -1,6 +1,10 @@
 require("!style-loader!css-loader!../css/app.css");
-window.$ = require("jquery");
+import Product from './app/Product';
 
-$(document).ready(function() {
-	alert("Hello World");
-});
+let myProduct = new Product(43, "My Product");
+
+console.dir("Product is named:" + myProduct.productid + " with " + myProduct.productname);
+
+myProduct.uppername();
+
+console.dir("Product is named: " + myProduct.productname);
