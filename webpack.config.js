@@ -26,7 +26,7 @@ module.exports = {
         ]
     },
     plugins: [
-    	new ExtractTextPlugin("build/[name]@bundle.css"),
-        new Uglify()
+    	new ExtractTextPlugin("build/[name]@bundle.css")
+        //new Uglify()
 	]
 };
